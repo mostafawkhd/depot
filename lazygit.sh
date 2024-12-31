@@ -8,7 +8,7 @@ fi
 
 if [ $1 = 'help' ]; then
 
-	echo 'lazygit [YOUR_COMMIT] [BRANCH]
+	echo 'lazygit [YOUR_COMMIT] [BRANCH]'
 fi
 
 add_commit_push () {
