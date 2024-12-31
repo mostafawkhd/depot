@@ -6,6 +6,11 @@ if [ -z $1 ] || [ -z $2 ];then
 fi
 
 
+if [ $1 = 'help' ]; then
+
+	echo 'lazygit [YOUR_COMMIT] [BRANCH]
+fi
+
 add_commit_push () {
 
 	git add -A
