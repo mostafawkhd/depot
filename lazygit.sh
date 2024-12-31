@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# For some tests
+
 if [ -z $1 ] || [ -z $2 ];then
 	echo 'you should enter two arguments'
 	exit 1
