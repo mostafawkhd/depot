@@ -16,6 +16,7 @@ add_commit_push () {
 	git add -A
 	git commit -m "$1"
 	git push origin "$2"
+	echo "your work is commited and pushed to the $2 branch"
 }
 
 
