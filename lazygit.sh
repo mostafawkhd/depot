@@ -1,6 +1,21 @@
 #!/bin/bash
 
 # For some tests
+if [ $1 = 'help' ]; then
+	echo 'lazygit [YOUR_COMMIT] [BRANCH]'
+ 	exit 0
+fi
+
+if [ $1 = 'install' ]; then 
+	if [ $UID != '0' ]; then
+ 		echo 'please run install as root '
+   		exit 1
+        fi
+	chmod +x ./lazygit.sh 
+	ln -sf "${PWD}/lazygit.sh" "/usr/local/bin/lazygit.sh"
+ 	echo 'is installed use help to get help'
+  	exit 0
+fi
 
 if [ -z $1 ] || [ -z $2 ];then
 	echo 'you should enter two arguments'
@@ -8,10 +23,7 @@ if [ -z $1 ] || [ -z $2 ];then
 fi
 
 
-if [ $1 = 'help' ]; then
 
-	echo 'lazygit [YOUR_COMMIT] [BRANCH]'
-fi
 
 add_commit_push () {
 
