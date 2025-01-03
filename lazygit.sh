@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+current_branch= $( git branch --show-current )
 # For some tests
 if [ $1 = 'help' ]; then
 	echo 'lazygit [YOUR_COMMIT] [BRANCH]'
@@ -17,13 +19,10 @@ if [ $1 = 'install' ]; then
   	exit 0
 fi
 
-if [ -z $1 ] || [ -z $2 ];then
-	echo 'you should enter two arguments'
+if [ -z $1 ] ;then
+	echo 'you should enter your commit'
 	exit 1
 fi
-
-
-
 
 add_commit_push () {
 
@@ -36,4 +35,6 @@ add_commit_push () {
 
 
 
-add_commit_push "$1" "$2"
+add_commit_push "$1" "$current_branch"
+
+
