@@ -3,12 +3,12 @@
 
 current_branch= $( git branch --show-current )
 # For some tests
-if [ $1 = 'help' ]; then
+if [ "$1" = 'help' ]; then
 	echo 'lazygit [YOUR_COMMIT] [BRANCH]'
  	exit 0
 fi
 
-if [ $1 = 'install' ]; then 
+if [ "$1" = 'install' ]; then 
 	if [ $UID != '0' ]; then
  		echo 'please run install as root '
    		exit 1
@@ -19,7 +19,7 @@ if [ $1 = 'install' ]; then
   	exit 0
 fi
 
-if [ -z $1 ] ;then
+if [ -z "$1" ] ;then
 	echo 'you should enter your commit'
 	exit 1
 fi
