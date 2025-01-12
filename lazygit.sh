@@ -8,7 +8,7 @@ if [ "$1" = "help" ]; then
  	exit 0
 fi
 
-if [ "$1" = 'install' ]; then 
+if [ "$1" = "install" ]; then 
 	if [ $UID != 0 ]; then
  		echo "please run install as root"
    		exit 1
